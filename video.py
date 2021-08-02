@@ -67,7 +67,6 @@ def main(path, outpath, color, detred, speed, quality, file = None):
             xpos = 0
             ypos+=10
         blank = blank.crop((0, 0, (7*len(arr[0])), ypos))
-        w, h = blank.size
         blank = blank.resize((int(w*quality), int(h*quality)))
         blank.save(path+img)
     fp_in = path+"*.jpg"
