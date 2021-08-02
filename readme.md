@@ -6,6 +6,7 @@ This CLI app takes in a mp4 format video, converts it to a gif with ASCII effect
 * detail picked up by the ASCII effect
 * speedup or slowdown
 * size of output file
+Check [here](https://github.com/Roboramv2/video2ascii#examples) for examples.
 ***
 
 ## Usage:
