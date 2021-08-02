@@ -1,11 +1,11 @@
 # Video2ASCIIgif
 
 This CLI app takes in a mp4 format video, converts it to a gif with ASCII effect applied. This also includes full control over:
-    * background color
-    * foreground color
-    * detail picked up by the ASCII effect
-    * speedup or slowdown
-    * size of output file
+* background color
+* foreground color
+* detail picked up by the ASCII effect
+* speedup or slowdown
+* size of output file
 ***
 
 ## Usage:
@@ -31,7 +31,7 @@ This CLI app takes in a mp4 format video, converts it to a gif with ASCII effect
 ## Examples:
 |Characteristic||||
 |-|-|-|-|
-|Original|![hi](https://tenor.com/5o9J.gif)|||
+|Original|![hi](./assets/og.gif)|||
 |--rd 1, 2, 3|![hi](./assets/rd1.gif)|![hi](./assets/rd2.gif)|![hi](./assets/rd3.gif)|
 |--sp 2, 3, 4|![hi](./assets/sp2.gif)|![hi](./assets/sp3.gif)|![hi](./assets/sp4.gif)|
 |--sz 0.8, 0.6, 0.4|![hi](./assets/sz1.gif)|![hi](./assets/sz2.gif)|![hi](./assets/sz3.gif)|
