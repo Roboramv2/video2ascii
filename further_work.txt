@@ -1,0 +1,5 @@
+Things to add to this project in the future:
+1. Improved speed control (currently faulty) with dynamic duration of output
+2. Full color gifs (instead of bg and fg) and themes to select from
+3. File size compression without reduction of area of each frame
+4. Remove dependence on PIl and lean on cv2 fully
