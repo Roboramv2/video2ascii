@@ -1,5 +1,0 @@
-This file is just here because I dont know how else to get github to commit this empty repo 'temp'.
-
-'temp' is necessary for the script to fucntion.
-
-If anyone can circumvent having to do it this way, be my guest.

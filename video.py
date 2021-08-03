@@ -40,6 +40,8 @@ def resizetext(char, factor):
     return newarr
 
 def main(path, outpath, color, detred, speed, quality, file = None):
+    if not os.path.exists(path):
+        os.makedirs(path)
     if file == None:
         return None
     images = []
@@ -84,9 +86,10 @@ if __name__=="__main__":
     a.add_argument("--sz", help="sizing factor to control quality and gif storage size, float value between 0 and 1")
     args = a.parse_args()
     args = vars(args)
-    print(args)
     bgcolor = tuple([int(i) for i in (args['bg'].split(','))])
     fgcolor = tuple([int(i) for i in (args['fg'].split(','))])
     main(file = args['fn'], path = "./temp/", outpath = './', color = [bgcolor, fgcolor], detred = int(args['rd']), speed = float(args['sp']), quality = float(args['sz']))
     for i in  os.listdir("./temp/"):
         os.remove("./temp/"+i)
+    os.rmdir('./temp')
+    print("Done! File as been saved as op.gif in this directory.")
