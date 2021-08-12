@@ -3,6 +3,7 @@ import os
 import argparse
 import sys
 from collections import Counter
+import math
 from PIL import Image, ImageDraw
 import glob
 
@@ -46,6 +47,7 @@ def main(path, outpath, color, detred, speed, quality, file = None):
         return None
     images = []
     vidcap = cv2.VideoCapture(file)
+    fps = vidcap.get(cv2.CAP_PROP_FPS)
     success,image = vidcap.read()
     count = 0
     while success:
@@ -74,7 +76,12 @@ def main(path, outpath, color, detred, speed, quality, file = None):
     fp_in = path+"*.jpg"
     fp_out = outpath+"op.gif"
     img, *imgs = [Image.open(f) for f in sorted(glob.glob(fp_in))]
-    img.save(fp=fp_out, format='GIF', append_images=imgs, save_all=True, duration=int(200/speed), loop=0)
+    framedur = math.ceil((1000/fps)/speed)
+    if framedur<20:
+        print("Your requested frame duration falls below the minimum 20ms, please try an input video of lower framerate. Saving with default speed.")
+        framedur = math.ceil(1000/fps)
+    print(framedur)
+    img.save(fp=fp_out, format='GIF', append_images=imgs, save_all=True, duration=framedur, loop=0)
 
 if __name__=="__main__":
     a = argparse.ArgumentParser()
